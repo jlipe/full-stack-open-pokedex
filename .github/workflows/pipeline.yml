@@ -31,11 +31,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "jlipe-pokedex" #Must be unique in Heroku
           heroku_email: "james@jameslipe.com"
-      - name: healthcheck
-        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "jlipe-pokedex" #Must be unique in Heroku
-          heroku_email: "james@jameslipe.com"
           healthcheck: "https://jlipe-pokedex.herokuapp.com/health"
           checkstring: "ok"
