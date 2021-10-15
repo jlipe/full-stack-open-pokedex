@@ -19,12 +19,12 @@ jobs:
         run: npm run eslint
       - name: test
         run: npm run test
-      # - name: e2e tests
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     command: npm run test:e2e
-      #     start: npm run test:start
-      #     wait-on: http://localhost:5000
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run test:start
+          wait-on: http://localhost:5000
       - name: deploy
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
@@ -32,5 +32,5 @@ jobs:
           heroku_app_name: "jlipe-pokedex" #Must be unique in Heroku
           heroku_email: "james@jameslipe.com"
           healthcheck: "https://jlipe-pokedex.herokuapp.com/health"
-          checkstring: "not going to work"
+          checkstring: "ok"
           rollbackonhealthcheckfailed: true
