@@ -31,7 +31,7 @@ const PokemonPage = ({ previous, next }) => {
   return (
     <>
       <div>
-        <h1>Here is a header I'm adding</h1>
+        <h1>Here is a header Im adding</h1>
       </div>
       <div className="links">
         {previous && <Link to={`/pokemon/${previous.name}`}>Previous</Link>}
