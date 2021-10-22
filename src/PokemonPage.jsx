@@ -30,6 +30,9 @@ const PokemonPage = ({ previous, next }) => {
   console.log('hiddenAbility=', hiddenAbility)
   return (
     <>
+      <div>
+        <h1>My header</h1>
+      </div>
       <div className="links">
         {previous && <Link to={`/pokemon/${previous.name}`}>Previous</Link>}
         <Link to="/">Home</Link>
