@@ -19,13 +19,14 @@ jobs:
         run: npm run eslint
       - name: test
         run: npm run test
-      - name: e2e tests
-        uses: cypress-io/github-action@v2
-        with:
-          command: npm run test:e2e
-          start: npm run test:start
-          wait-on: http://localhost:5000
+      # - name: e2e tests
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     command: npm run test:e2e
+      #     start: npm run test:start
+      #     wait-on: http://localhost:5000
       - name: deploy
+        if: github.event_name == 'push'
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
